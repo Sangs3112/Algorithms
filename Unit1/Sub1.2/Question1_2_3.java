@@ -6,7 +6,8 @@ import edu.princeton.cs.algs4.Interval2D;
 import edu.princeton.cs.algs4.StdDraw;
 
 /**
- * Author: Sangs Date:2020.12.21 Function:《算法》P71 1.2.3
+ * Author: Sangs Date:2020.12.21 
+ * Function:《算法》P71 1.2.3
  * Questiion:编写一个Interval2D的用例，从命令行接收参数N、min和max。生成N个随机的2D间隔。
  * 其宽和高均匀地分布在单位正方形中的min和max之间。 用STdDraw画出他们并打印出相交间隔对的数量以及有包含关系的间隔对数量
  * Ps.计算包含关系没有做，做好的时候发现需要计算点的坐标，但是我一开始直接从随机线开始写的，就可能需要重新写，懒得。

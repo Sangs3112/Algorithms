@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Question1_2_11",
+            "request": "launch",
+            "mainClass": "Question1_2_11",
+            "projectName": "Algorithms_75219b2d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Question1_2_10",
+            "request": "launch",
+            "mainClass": "Question1_2_10",
+            "projectName": "Algorithms_75219b2d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Question1_2_9",
+            "request": "launch",
+            "mainClass": "Question1_2_9",
+            "projectName": "Algorithms_75219b2d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Question1_2_6",
+            "request": "launch",
+            "mainClass": "Question1_2_6",
+            "projectName": "Algorithms_75219b2d"
+        },
+        {
+            "type": "java",
             "name": "Launch Question1_2_3",
             "request": "launch",
             "mainClass": "Question1_2_3",
