@@ -11,6 +11,7 @@ import java.util.Scanner;
  *          Item pop() 出栈
  * SampleIn:to be or not to - be - - that - - - is
  * SampleOut:to be or not to be 堆栈中还有2个元素
+ * Question:《算法》P102 1.3.7 为Stack添加一个方法peek()，返回栈中最近添加的元素(不弹出)
  */
 public class Stack<Item> implements Iterable<Item>{
     private Node first;
@@ -35,6 +36,7 @@ public class Stack<Item> implements Iterable<Item>{
         N--;
         return item;
     }
+    public Item peek() {return first.item;}
 
     public Iterator<Item> iterator(){return new ListIterator();}
     private class ListIterator implements Iterator<Item>{
