@@ -44,11 +44,9 @@ public class Question1_3_30 {
         Node<Integer> se = new Node<Integer>();
         Node<Integer> th = new Node<Integer>();
         Node<Integer> fo = new Node<Integer>();
-        fi.item = 1;
-        se.item = 2;
-        th.item = 3;
-        fo.item = 4;
+        fi.item = 1; se.item = 2; th.item = 3; fo.item = 4;
         fi.next = se;se.next = th;th.next = fo;fo.next = null;
+
         Node<Integer> test = iterationReverse(fi);
         Node<Integer> x = test;
         while(x != null){
@@ -56,12 +54,13 @@ public class Question1_3_30 {
             x = x.next;
         }
         System.out.println();
+
         Node<Integer> test2 = recursionReverse(test);
         Node<Integer> y = test2;
         while(y != null){
             System.out.print(y.item + " ");
             y = y.next;
         }
-        System.out.println(test2.item);
+        System.out.println();
     }
 }

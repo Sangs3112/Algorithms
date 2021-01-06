@@ -13,14 +13,23 @@ public class Question1_3_26 {
     }
 
     public static Node remove(Node head, String key){
-        if(head != null && head.item.equals(key)) head = head.next;
         Node current = head;
-        while(current.next != null){
-            if(current.next.item.equals(key)) current.next = current.next.next;
+        while (current != null){
+            if (current.item.equals(key)){
+                if(current == head){
+                    head = head.next;
+                    current = head;
+                    continue;
+                }
+            }else if (current.next != null){
+                if(current.next.item.equals(key)){
+                    current.next = current.next.next;
+                }else{
+                    current = current.next;
+                    continue;
+                }
+            }
             current = current.next;
-            // if (current.next.next == null){
-            //     if(current.item.equals(key)) current.next = current.next.next;
-            // }
         }
         return head;
     }
@@ -31,7 +40,7 @@ public class Question1_3_26 {
         Node se = new Node();
         Node th = new Node();
         Node fo = new Node();
-        fi.item = "ab"; se.item = "bc"; th.item = "ab"; fo.item = "cd";
+        fi.item = "ab"; se.item = "aba"; th.item = "ab"; fo.item = "cd";
         fi.next = se; se.next = th; th.next = fo; fo.next = null;
 
         Node x = fi;
