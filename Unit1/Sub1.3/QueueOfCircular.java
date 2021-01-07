@@ -53,7 +53,33 @@ public class QueueOfCircular <Item> implements Iterable<Item>{
         }
     }
 
+    /*
+     *  为1.3.37编写
+     *  传入一个整型参数k，能够删除环形队列中从头开始的第k个节点并返回这个节点的值
+     *  需要在每次执行删除以后改变头节点为当前节点，以便后续继续数数
+     */ 
+    public Item denum(int k){
+        while(k > 1){
+            Node current = last.next;
+            int i = 1;
+            while (i < k-1){
+                current = current.next;
+                i++;
+            }
+            Item item = current.next.item; 
+            current.next = current.next.next;
+            last = current;
+            N--;
+            return item;
+        }
 
+        Item item = last.next.item;
+        last.next = last.next.next;
+        N--;
+        return item;
+    }
+
+    
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s;
