@@ -12,8 +12,27 @@ import java.util.Scanner;
  */
 public class Question1_4_19 {
     
-    public static int localMinOfMatrix(int[] a){
-
+    public static int localMinOfMatrix(int[][] a){
+        int N = (int)Math.sqrt(a.length);
+        int lo = 0;
+        int hi = N - 1;
+        while(lo <= hi){
+            int mid = (hi - lo)/2 + lo;
+            if(mid > 0 && mid < N - 1){
+                if(a[mid][mid] < a[mid - 1][mid] && a[mid][mid] < a[mid][mid - 1]
+                && a[mid][mid] < a[mid + 1][mid] && a[mid][mid] < a[mid][mid + 1]) return a[mid][mid];
+                else{
+                    if(a[mid][mid - 1] < a[mid][mid + 1]) hi = mid - 1;
+                    else lo = mid + 1;
+                }
+            }else if (mid == 0){
+                if(a[mid][mid] < a[mid][mid + 1] && a[mid][mid] < a[mid + 1][mid]) return mid;
+                else break;
+            }else if(mid == N - 1){
+                if(a[mid][mid] < a[mid - 1][mid] && a[mid][mid] < a[mid][mid - 1]) return mid;
+                else break;
+            }
+        }
         return -1;
     }
 
@@ -33,5 +52,9 @@ public class Question1_4_19 {
             }
             System.out.println();
         }
+
+        int fin = localMinOfMatrix(a);
+        if(fin == -1) System.out.println("没有局部最小值");
+        else System.out.println("局部最小值为：" + fin);
     }
 }
